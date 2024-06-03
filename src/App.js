@@ -26,7 +26,9 @@ const App = () => {
   const fetchInstagramData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`/api/instagram/${username}`);
+      const response = await axios.get(
+        `https://insta-stealthy-story-surfer-server.vercel.app/api/instagram/${username}`
+      );
       setUserInfo(response.data.userInfo);
       setError("");
     } catch (err) {
@@ -66,6 +68,11 @@ const App = () => {
         onChange={handleInputChange}
         fullWidth
         margin="normal"
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            fetchInstagramData();
+          }
+        }}
       />
       <Button
         variant="contained"
