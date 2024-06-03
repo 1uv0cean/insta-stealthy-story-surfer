@@ -8,9 +8,6 @@ require("dotenv").config();
 
 const app = express();
 
-// Port
-const PORT = process.env.PORT || 8000;
-
 app.use(cors());
 const ig = new IgApiClient();
 
@@ -44,10 +41,6 @@ app.get("/instagram/:username", async (req, res) => {
     console.error(error);
     res.status(500).json({ error: error.message });
   }
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
 });
 
 module.exports = app;

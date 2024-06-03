@@ -26,9 +26,7 @@ const App = () => {
   const fetchInstagramData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(
-        `http://localhost:8000/instagram/${username}`
-      );
+      const response = await axios.get(`/api/instagram/${username}`);
       setUserInfo(response.data.userInfo);
       setError("");
     } catch (err) {
