@@ -8,9 +8,6 @@ require("dotenv").config();
 
 const app = express();
 
-// Port
-const PORT = process.env.PORT || 8000;
-
 app.use(cors());
 const ig = new IgApiClient();
 
@@ -25,9 +22,6 @@ app.get("/api/instagram/:username", async (req, res) => {
       .status(500)
       .json({ error: "Environment variables not set properly" });
   }
-
-  console.log("ID:", id);
-  console.log("PW:", pw);
 
   ig.state.generateDevice(id);
   await ig.account.login(id, pw);
@@ -53,10 +47,6 @@ app.get("/api/instagram/:username", async (req, res) => {
     console.error(error);
     res.status(500).json({ error: error.message });
   }
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
 });
 
 module.exports = app;
