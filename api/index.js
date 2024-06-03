@@ -7,7 +7,6 @@ const { IgApiClient } = require("instagram-private-api");
 require("dotenv").config();
 
 const app = express();
-const port = 8000;
 
 app.use(cors());
 const ig = new IgApiClient();
@@ -15,13 +14,9 @@ const ig = new IgApiClient();
 app.get("/instagram/:username", async (req, res) => {
   const { username } = req.params;
 
-  // Check if Instagram credentials are set
+  // Replace with your Instagram credentials
   const id = process.env.ID;
   const pw = process.env.PW;
-
-  if (!id || !pw) {
-    return res.status(500).json({ error: "Instagram credentials are missing" });
-  }
 
   ig.state.generateDevice(id);
   await ig.account.login(id, pw);
@@ -49,6 +44,4 @@ app.get("/instagram/:username", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+module.exports = app;
