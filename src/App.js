@@ -131,15 +131,31 @@ const App = () => {
                     <Typography variant="h6">Stories:</Typography>
                     {userInfo.stories.map((story, index) => (
                       <Box key={index} style={{ marginTop: "10px" }}>
-                        <img
-                          src={story.image_versions2.candidates[0].url}
-                          alt={`Story ${index + 1}`}
-                          style={{
-                            width: "100%",
-                            height: "auto",
-                            maxWidth: "100%",
-                          }}
-                        />
+                        {story.video_versions ? (
+                          <video
+                            controls
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              maxWidth: "100%",
+                            }}
+                          >
+                            <source
+                              src={story.video_versions[0].url}
+                              type="video/mp4"
+                            />
+                          </video>
+                        ) : (
+                          <img
+                            src={story.image_versions2.candidates[0].url}
+                            alt={`Story ${index + 1}`}
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              maxWidth: "100%",
+                            }}
+                          />
+                        )}
                       </Box>
                     ))}
                   </Box>
