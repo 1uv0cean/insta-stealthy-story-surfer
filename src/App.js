@@ -43,6 +43,9 @@ const App = () => {
 
   return (
     <Container>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Ad2 />
+      </div>
       <Box
         textAlign="center"
         my={4}
@@ -53,7 +56,6 @@ const App = () => {
           boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
         }}
       >
-        <Ad2 />
         <Typography
           variant="h3"
           gutterBottom
@@ -177,7 +179,7 @@ const App = () => {
       <div
         style={{
           display: "flex",
-          gap: "20px",
+          gap: "10px",
           justifyContent: "center",
         }}
       >
