@@ -17,7 +17,7 @@ const Info = () => {
         Instagram Insights
       </Typography>
       <Typography variant="subtitle1" color="textSecondary">
-        Written by 1uv0cean
+        Written by story-viewer.online
       </Typography>
 
       <Accordion>
