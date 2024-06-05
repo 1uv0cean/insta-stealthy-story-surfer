@@ -14,6 +14,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import Ad1 from "./components/Advertisement/Ad1";
 import Ad2 from "./components/Advertisement/Ad2";
+import Info from "./components/Info";
 
 const App = () => {
   const [username, setUsername] = useState("");
@@ -183,6 +184,7 @@ const App = () => {
         {/* <Info /> */}
         <Ad1 />
       </div>
+      <Info />
     </Container>
   );
 };
