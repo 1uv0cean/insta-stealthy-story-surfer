@@ -13,7 +13,7 @@ import {
 import axios from "axios";
 import React, { useState } from "react";
 import Ad1 from "./components/Advertisement/Ad1";
-import Info from "./components/Info";
+import Ad2 from "./components/Advertisement/Ad2";
 
 const App = () => {
   const [username, setUsername] = useState("");
@@ -52,6 +52,7 @@ const App = () => {
           boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
         }}
       >
+        <Ad2 />
         <Typography
           variant="h3"
           gutterBottom
@@ -167,8 +168,21 @@ const App = () => {
           </CardContent>
         </Card>
       )}
-      <Info />
-      <Ad1 />
+      <div
+        style={{
+          marginTop: "20px",
+        }}
+      />
+      <div
+        style={{
+          display: "flex",
+          gap: "20px",
+          justifyContent: "center",
+        }}
+      >
+        {/* <Info /> */}
+        <Ad1 />
+      </div>
     </Container>
   );
 };
